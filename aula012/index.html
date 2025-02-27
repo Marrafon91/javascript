@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora IMC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculadora de IMC</h1>
+    <form id="imcForm">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" name="peso" placeholder="Seu peso" required><br><br>
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" name="altura" step="0.01" placeholder="Sua altura"  required><br><br>
+
+        <button type="button" onclick="calcularIMC()" id="b1">Calcular IMC</button>
+    </form>
+
+    <h2 id="resultado"></h2>
+
+    <script>
+        function calcularIMC() {
+            const peso = parseFloat(document.getElementById("peso").value)
+            const altura = parseFloat(document.getElementById("altura").value)
+            const imc = peso / (altura * altura)
+
+            if (peso <= 0 || altura <=0) {
+                alert("Peso e altura devem ser maiores que zero")
+                return;
+            }
+            let resultado = document.getElementById("resultado")
+            if (imc < 18.5) {
+                resultado = "Baixo peso"
+            } else if (imc >= 18.5 && imc < 24.9){
+                resultado = "Peso normal"
+            } else if (imc >= 25 && imc < 29.9){
+                resultado = "Sobrepeso"
+            } else if (imc >= 30 && imc < 34.9){
+                resultado = "Obesidade"
+            } else {
+                resultado = "Obesidade grave"
+            }
+            document.getElementById('resultado').textContent = `Seu IMC é ${imc.toFixed(2)}% - ${resultado}`
+        }
+    </script>
+</body>
+</html>
