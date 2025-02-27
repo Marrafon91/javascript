@@ -56,7 +56,7 @@
         button:hover {
             background: #ff401e;
         }
-        #container {
+        #txt {
             margin-top: 20px;
             font-weight: 600;
             font-size: 18px;
@@ -70,18 +70,18 @@
         <label id="b1">Digite o país:</label>
         <input type="text" id="pais" placeholder="Digite seu país">
         <button id="b2" onclick="verificar()">Verificar</button>
-        <div id="container"></div>
+        <h2 id="txt"></h2>
     </div>
 
     <script>
         function verificar() {
             let pais = 'Brasil'
             let input = document.getElementById('pais').value
-            let div = document.getElementById('container')
+            let h2 = document.getElementById('txt')
             if (input == `Brasil`) {
-                div.innerHTML = `Você é Brasileiro`
+                h2.innerHTML = `Você é Brasileiro`
             }else {
-                div.innerHTML = `Você é Estrangeiro`
+                h2.innerHTML = `Você é Estrangeiro`
             }
 
         }
