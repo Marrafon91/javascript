@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificação de Nacionalidade</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(120deg, #1e90ff, #00c9a7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            width: 400px;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            width: 80%;
+            border: 2px solid #1e90ff;
+            border-radius: 8px;
+            outline: none;
+            margin-bottom: 20px;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border: 2px solid #00c9a7;
+        }
+
+        button {
+            background: #1e90ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #00c9a7;
+        }
+
+        #container {
+            margin-top: 20px;
+            font-weight: 600;
+            font-size: 18px;
+            color: #333;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Verificação de Nacionalidade</h1>
+    <label id="b1">Digite o país:</label>
+    <input type="text" id="pais" placeholder="Ex: Brasil">
+    <button id="b2" onclick="verificar()">Verificar</button>
+    <div id="container"></div>
+</div>
+
+<script>
+    function verificar() {
+        let input = document.getElementById('pais').value
+        let div = document.getElementById('container')
+        let regex = /\d/; // Expressão regular para detectar números
+
+        if (regex.test(input)) {
+            div.innerHTML = `⚠️ Isso não é um país, por favor digite apenas letras!`
+        } else if (input === '') {
+            div.innerHTML = `⚠️ Por favor, digite o país!`
+        } else if (input.toLowerCase() === 'brasil') {
+            div.innerHTML = `🇧🇷 Você é Brasileiro!`
+        } else {
+            div.innerHTML = `🌎 Você é Estrangeiro de <strong>${input}</strong>!`
+        }
+    }
+</script>
+
+</body>
+</html>

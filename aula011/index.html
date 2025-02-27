@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Verificação de Nacionalidade</h1>
+        <label id="b1">Digite o país:</label>
+        <input type="text" id="pais" placeholder="Ex: Brasil">
+        <button id="b2" onclick="verificar()">Verificar</button>
+        <div id="container"></div>
+    </div>
+    
+    <script>
+        function verificar() {
+            let input = document.getElementById('pais').value
+            let div = document.getElementById('container')
+    
+            if (input.toLowerCase() === 'brasil') {
+                div.innerHTML = `🇧🇷 Você é Brasileiro!`
+            } else if (input === '') {
+                div.innerHTML = `⚠️ Por favor, digite o país!`
+            } else {
+                div.innerHTML = `🌎 Você é Estrangeiro de <strong>${input}</strong>!`
+            }
+        }
+    </script>
+    
+</body>
+</html>
