@@ -16,7 +16,7 @@ function verificar() {
 
         // Verifica o gênero selecionado
         if (fsex[0].checked) {
-            genero = 'Homem'; // Corrigido de 'Homen' para 'Homem'
+            genero = 'Homem'; 
             if (idade >= 0 && idade < 10) {
                 // Criança
                 img.setAttribute('src', 'imagens/bebe-homem.png');
@@ -39,7 +39,7 @@ function verificar() {
                 // Jovem
                 img.setAttribute('src', 'imagens/jovem-mulher.png');
             } else if (idade < 60) {
-                // Adulto
+                // Adulta
                 img.setAttribute('src', 'imagens/adulta.png');
             } else {
                 // Idosa
