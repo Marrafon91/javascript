@@ -21,7 +21,6 @@ Repositório com os exercícios e anotações dos primeiros passos em JavaScript
 - Arquivos de configuração padrão:
   - `.gitattributes`
   - `LICENSE` – Licença MIT.
-- `README.md` – Este arquivo (ainda não preenchido) :contentReference[oaicite:0]{index=0}.
 
 ---
 
